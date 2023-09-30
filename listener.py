@@ -16,11 +16,11 @@ def start_server():
     server_socket.bind((server_host, server_port))
     server_socket.listen(5)
 
-    print(f"Sunucu {server_host}:{server_port}'de çalışıyor...")
+    print(f"Server {server_host}:{server_port} start")
 
     while True:
         client_socket, addr = server_socket.accept()
-        print(f"{addr[0]} sunucuya bağlandı")
+        print(f"{addr[0]} target connected")
 
         while True:
             command = client_socket.recv(1024).decode()
